@@ -18,6 +18,8 @@ def read_template(template_file_path):
             return template
     except FileNotFoundError as error:
         raise error
+    except Exception as error:
+        raise error
 
 
 def parse_template(template):
