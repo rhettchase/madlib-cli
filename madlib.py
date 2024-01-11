@@ -9,9 +9,7 @@ Number within a certain range, etc.
 *****************************************
 """
 
-print(welcome_message)
-
-template_file_path = 'assets/dark_and_stormy_night_template.txt'
+template_file_path = 'assets/make_me_a_video_game_template.txt'
 
 def read_template(template_file_path):
     try:
@@ -64,6 +62,7 @@ def merge(stripped_template, user_words):
     return stripped_template.format(*user_words)
 
 def run_app():
+    print(welcome_message)
     template = read_template(template_file_path)
     stripped_template, language_parts = parse_template(template)
     user_words = collect_user_words(language_parts)
@@ -72,17 +71,3 @@ def run_app():
 
 run_app()
 
-
-
-# test_template = f"It was a {adjective1} and {adjective2} {noun_plural_1}."
-
-# madlib_template = """
-# Make Me A Video Game!
-
-# I the {adjective1} and {adjective2} {first_name_1} have {verb_past_tense} {first_name_2}'s {adjective3} sister and plan to steal her {adjective4} {noun_plural_1}!
-
-# What are a {animal_large} and backpacking {animal_small} to do? Before you can help {name_female}, you'll have to collect the {adjective5} {noun_plural_1} and {adjective5} {noun_plural_2} that open up the {number_1_to_50} worlds connected to A {first_name_3}'s Lair. There are {number_1} {noun_plural_3} and {number_2} {noun_plural_4} in the game, along with hundreds of other goodies for you to find.
-
-# """
-
-# print(f"{test_template}")
