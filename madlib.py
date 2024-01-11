@@ -12,6 +12,15 @@ Number within a certain range, etc.
 template_file_path = 'assets/make_me_a_video_game_template.txt'
 
 def read_template(template_file_path):
+    """
+    Opens file, reads contents, returns stripped down template with no contents between '{}'
+    
+    Parameters:
+    str: path to text file
+    
+    Returns: 1 string
+    str: template with word type between '{}'
+    """
     try:
         with open(template_file_path, 'r') as file:
             template = file.read().strip()
@@ -23,18 +32,22 @@ def read_template(template_file_path):
 
 
 def parse_template(template):
+    """
+    Parses template and remove the contents from between the '{}'
+    
+    Parameters: 1 string
+    str: template with word type between '{}'
+    
+    Returns: 1 string, 1 tuple
+    str: stripped template string with no contents between '{}'
+    tuple: str parts that were between the '{}'
+    """
     stripped_template = ""
     language_parts = []
     
     capturing = False
     current_part = ""
-    
-    # loop through template by character
-    # if character is '{' set capturing to True
-    # then next character concatenated onto string
-    # when hit '}' capturing set to False
-    # append to stripped version of string
-    
+      
     for char in template:
         if char == '{':
             capturing = True
@@ -52,6 +65,15 @@ def parse_template(template):
 
 
 def collect_user_words(language_parts):
+    """
+    Collects user input for each language part (word type)
+    
+    Parameters: 1 tuple
+    tuple: language parts (e.g., adjective)
+    
+    Returns: 1 tuple 
+    tuple: user words in response to the prompts to enter words
+    """
     user_words = []
     
     for placeholder in language_parts:
@@ -61,9 +83,23 @@ def collect_user_words(language_parts):
     return tuple(user_words)
 
 def merge(stripped_template, user_words):
+    """
+    Takes bare template and user entered parts to fill in/complete the madlib
+    
+    Parameters: 1 str, 1 tuple
+    str: stripped template string with no contents between '{}'
+    tuple: collection of words collected from user for each language part
+    """
     return stripped_template.format(*user_words)
 
 def run_app():
+    """
+    Runs the application in sequential order
+    Parameters: none
+    Returns:
+    - str: Welcome message
+    - str: Completed madlib
+    """
     print(welcome_message)
     template = read_template(template_file_path)
     stripped_template, language_parts = parse_template(template)
