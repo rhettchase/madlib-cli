@@ -12,6 +12,10 @@ Command line application which takes advantage of Python’s built in capabiliti
 <!-- - [back-end server url](http://xyz.com/) (when applicable)
 - [front-end application](http://xyz.com/) (when applicable) -->
 - chatGPT
+- [Real Python: Reading and Writing Files](https://realpython.com/read-write-files-python/)
+- [Real Python: args and kwargs](https://realpython.com/python-kwargs-and-args/#unpacking-with-the-asterisk-operators)
+- [Real Python: Tuples](https://realpython.com/python-tuple/)
+
 
 ### Setup
 
@@ -34,4 +38,5 @@ Command line application which takes advantage of Python’s built in capabiliti
 
 #### Tests
 
-- Run tests by activating virtual environment and running `pytest` command in command line
+- Run tests by activating virtual environment and running `pytest -s` command in command line
+- Tests includes the following functions: `read_template`, `parse_template`, and `merge`
