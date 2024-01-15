@@ -55,7 +55,7 @@ def parse_template(template):
         elif char == '}' and capturing:
             capturing = False
             language_parts.append(current_part)
-            stripped_template += '{}'
+            stripped_template += '{}' # add placeholder brackets to template
         elif not capturing:
             stripped_template += char
         elif capturing:
@@ -105,7 +105,10 @@ def run_app():
     stripped_template, language_parts = parse_template(template)
     user_words = collect_user_words(language_parts)
     complete_madlib = merge(stripped_template, user_words)
+    with open('assets/make_me_a_video_game_template_completed.txt', 'w+') as file:
+        file.write(complete_madlib)
     print(complete_madlib)
 
-run_app()
+if __name__ == "__main__":
+    run_app()
 

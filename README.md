@@ -38,5 +38,5 @@ Command line application which takes advantage of Python’s built in capabiliti
 
 #### Tests
 
-- Run tests by activating virtual environment and running `pytest -s` command in command line
+- Run tests by activating virtual environment and running `pytest` command in command line
 - Tests includes the following functions: `read_template`, `parse_template`, and `merge`
