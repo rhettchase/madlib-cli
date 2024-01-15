@@ -92,7 +92,7 @@ def merge(stripped_template, user_words):
     """
     return stripped_template.format(*user_words)
 
-def run_app():
+def main():
     """
     Runs the application in sequential order
     Parameters: none
@@ -110,5 +110,5 @@ def run_app():
     print(complete_madlib)
 
 if __name__ == "__main__":
-    run_app()
+    main()
 
